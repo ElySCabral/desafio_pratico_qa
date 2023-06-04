@@ -10,8 +10,11 @@ function calcularValor() {
     // Calcula o valor da refeição com base no valor do quilo e no peso da refeição
     var valorRefeicao = pesoRefeicao * (valorQuilo / 1000);
 
+    // Converter o valor para string com a formatação correta
+    var valorFormatado = valorRefeicao.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
     // Cria a mensagem com o resultado formatado
-    var mensagem = 'O prato de ' + pesoRefeicao + ' gramas custa: R$' + valorRefeicao.toFixed(2);
+    var mensagem = 'O prato de ' + pesoRefeicao + ' gramas custa: R$' + valorFormatado;
 
     // Exibe a mensagem no elemento de resultado e mostra o resultado
     document.getElementById('mensagem').textContent = mensagem;
